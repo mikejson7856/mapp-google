@@ -2,6 +2,7 @@
 import { useRouter } from "next/navigation";
 import Cookies from "js-cookie";
 import { useEffect } from "react";
+import LocationSearch from "./LocationSearch";
 function Home({ adminId, posterId }) {
   useEffect(() => {
     Cookies.set("adminId", adminId);
@@ -34,6 +35,12 @@ function Home({ adminId, posterId }) {
           allowfullscreen=""
           loading="lazy"
         ></iframe>
+        {/* added location input */}
+        <div className="relative z-10 shadow-2xl">
+          <div className="absolute max-h-[30vh] w-full mx-auto">
+            <LocationSearch />
+          </div>
+        </div>
 
         <div className="relative z-10 shadow-2xl">
           {" "}
